@@ -1,36 +1,158 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Banking API Demo
+
+A Next.js application that demonstrates banking API capabilities, deployed on Cloudflare Workers.
+
+## Overview
+
+This project showcases modern banking APIs through a demo application that provides:
+
+- User authentication
+- Account management
+- Transaction history
+- Payment methods
+- Contact functionality
+- Interactive API documentation
+
+## Architecture
+
+- **Frontend**: Next.js App Router with React
+- **Backend**: API routes implemented as Next.js route handlers
+- **Deployment**: Cloudflare Workers (via Open Next)
+- **Documentation**: OpenAPI/Swagger integration
+
+## Features
+
+### Authentication
+The application includes a secure login system with proper authentication utilities.
+
+### Banking Features
+- **Accounts**: View available accounts and details
+- **Transactions**: Access transaction history 
+- **Payment Methods**: Manage payment options
+- **User Profile**: View and manage user information
+
+### API Documentation
+Interactive API documentation is available through:
+- Swagger UI integration
+- OpenAPI specification
+
+## API Endpoints
+
+The application exposes the following API endpoints:
+
+- `/api/login` - Authentication endpoint
+- `/api/accounts` - Account management
+- `/api/transactions` - Transaction history
+- `/api/user-profile` - User profile information
+- `/api/payment-methods` - Payment methods
+- `/api/contact` - Contact functionality
+- `/api/swagger` - Swagger UI for API documentation
+- `/api/openapi` - OpenAPI specification
+- `/api/api-docs` - Additional API documentation
+
+## Pages
+
+- `/` - Home page
+- `/login` - User login
+- `/contact` - Contact form
+- `/api-demo` - Interactive API demonstration
+- `/api-docs` - API documentation
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js (version 18 or later recommended)
+- npm, yarn, pnpm, or bun
+
+### Development
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application
+
+### Deployment to Cloudflare Workers
+
+This project is configured for deployment to Cloudflare Workers using [Open Next](https://github.com/cloudflare/next-on-pages).
+
+1. Configure your `wrangler.jsonc` with appropriate settings (see [Customization](#customization) below)
+2. Build the application:
+   ```bash
+   npm run build
+   # or
+   yarn build
+   # or
+   pnpm build
+   # or
+   bun build
+   ```
+3. Deploy to Cloudflare Workers:
+   ```bash
+   npx wrangler deploy
+   ```
+
+## Customization
+
+The application can be easily customized through settings in the `wrangler.jsonc` file. These settings allow you to adapt the banking website to your specific needs without changing the codebase.
+
+### Environment Variables
+
+The following environment variables can be configured in the `vars` section of `wrangler.jsonc`:
+
+```jsonc
+"vars": { 
+  "API_BASE_URL": "https://your-api-endpoint.com",
+  "COMPANY_NAME": "Your Bank Name",
+  "COLOR_PRIMARY": "#YourBrandColor"
+},
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **API_BASE_URL**: The base URL for your banking API. This should point to your backend API service that provides the banking data.
+- **COMPANY_NAME**: The name of your banking organization. This will be displayed throughout the application UI.
+- **COLOR_PRIMARY**: The primary brand color in hexadecimal format. This will be used for styling elements throughout the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Cron Trigger Functionality
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The banking website includes a scheduled worker that runs via the cron trigger configured in `wrangler.jsonc`. This worker performs the following functions:
 
-## Learn More
+- Executes automated API testing to ensure all endpoints are functioning correctly
+- Generates randomized API traffic with varying request types (GET, POST, PUT, PATCH, DELETE)
+- Tests different endpoints with various API tokens to simulate different user access levels
+- Creates a detailed test summary showing request distribution and success rates
+- Can be used for performance monitoring and detecting API issues in production
 
-To learn more about Next.js, take a look at the following resources:
+The cron trigger frequency can be adjusted in the `wrangler.jsonc` file. By default, it's set to run every minute (`"* * * * *"`), but you can modify this to run less frequently in production environment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## API Documentation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The API documentation is available at:
+- Swagger UI: `/api/swagger` endpoint
+- OpenAPI Specification: `/api/openapi` endpoint
+- API Documentation Page: `/api-docs` route
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Please follow the project's coding standards and submit pull requests for any proposed changes.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+[Specify the license information here]

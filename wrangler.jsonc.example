@@ -1,0 +1,27 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "virgin-money",
+	"main": "./src/worker/worker.ts",
+	"compatibility_date": "2025-03-01",
+	"compatibility_flags": [
+		"nodejs_compat",
+		"global_fetch_strictly_public"
+	],
+	"assets": {
+		"binding": "ASSETS",
+		"directory": ".open-next/assets"
+	},
+	"observability": {
+		"enabled": true
+	},
+	"triggers": {
+		"crons": [
+		"* * * * *"
+		]
+	},
+	"vars": { 
+		"API_BASE_URL": "https://www.example.com",
+		"COMPANY_NAME": "Your Company",
+		"COLOR_PRIMARY": "#e10718"
+	}
+}
