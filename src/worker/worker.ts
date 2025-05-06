@@ -1,3 +1,4 @@
+// @ts-expect-error `.open-next/worker.js` is generated at build time
 import { default as handler } from "../../.open-next/worker.js";
 //import { DurableObject } from 'cloudflare:workers';
 
@@ -278,4 +279,5 @@ function randomChoice<T>(array: T[]): T {
   return array[Math.floor(Math.random() * array.length)];
 }
 
+// @ts-expect-error `../../.open-next/worker.js` is generated at build time
 export { DOQueueHandler, DOShardedTagCache } from "../../.open-next/worker.js";
