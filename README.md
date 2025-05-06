@@ -2,6 +2,8 @@
 
 A Next.js application that demonstrates banking API capabilities, deployed on Cloudflare Workers.
 
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fnouvellonsteph%2Fbanking-simulation)
+
 ## Overview
 
 This project showcases modern banking APIs through a demo application that provides:
