@@ -32,6 +32,8 @@ declare global {
   }
 }
 
+const COMPANY_NAME = process.env.COMPANY_NAME || "Cloudflare Banking";
+
 // Create API docs page with directly embedded Swagger UI
 export default function ApiDocs() {
   // Initialize Swagger UI on component mount
@@ -70,7 +72,7 @@ export default function ApiDocs() {
         href="https://unpkg.com/swagger-ui-dist@5.9.0/swagger-ui.css"
       />
       <div className="vm-card">
-        <h1 className="text-2xl font-bold mb-4 text-[var(--primary)]">Virgin Money API Documentation</h1>
+        <h1 className="text-2xl font-bold mb-4 text-[var(--primary)]">{COMPANY_NAME} API Documentation</h1>
         <p className="mb-6">
           Explore our API endpoints and learn how to integrate with our banking services.
         </p>

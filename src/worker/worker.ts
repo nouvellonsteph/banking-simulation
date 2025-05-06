@@ -1,4 +1,5 @@
 import { default as handler } from "../../.open-next/worker.js";
+//import { DurableObject } from 'cloudflare:workers';
 
 // Define CloudflareEnv interface to include the API_BASE_URL
 interface CloudflareEnv {
@@ -7,7 +8,7 @@ interface CloudflareEnv {
 }
 
 // Default API base URL if not set in environment
-const DEFAULT_API_BASE_URL = 'https://virgin.justalittlebyte.ovh/api';
+const DEFAULT_API_BASE_URL = 'https://virgin.sub.justalittlebyte.ovh/api';
 
 export default {
   fetch: handler.fetch,

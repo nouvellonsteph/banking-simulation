@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { validateApiKey } from '../auth-utils-fix';
+import { validateApiKey } from '../auth-utils';
 
 // Mock data for accounts
 const accounts = [

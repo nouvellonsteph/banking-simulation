@@ -4,23 +4,24 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   // Get API base URL from environment variables (set in wrangler.jsonc)
   const apiBaseUrl = process.env.API_BASE_URL || '/api';
+  const companyName = process.env.COMPANY_NAME || "Cloudflare Banking";
   
   // Define the OpenAPI spec directly as a JavaScript object (JSON) instead of YAML
   const openApiSpec = {
     openapi: "3.1.0",
     info: {
-      title: "Virgin Money API",
-      description: "Virgin Money Banking API provides secure access to financial data and operations.\n\n**Security Note:** All endpoints except `/api/user-profile` (GET) require an API key for authentication.",
+      title: `${companyName} API`,
+      description: `${companyName} Banking API provides secure access to financial data and operations.**Security Note:** All endpoints except /api/user-profile (GET) require an API key for authentication.`,
       version: "1.0.0",
       contact: {
-        name: "Virgin Money API Support",
-        email: "api-support@virginmoney.example"
+        name: `${companyName} API Support`,
+        email: "api-support@example.com"
       }
     },
     servers: [
       {
         url: apiBaseUrl,
-        description: "Virgin Money API Server"
+        description: `${companyName} API Server`
       }
     ],
     components: {
