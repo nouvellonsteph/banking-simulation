@@ -41,5 +41,4 @@ next-env.d.ts
 
 # wrangler files
 .wrangler
-wrangler.jsonc
 .dev.vars*

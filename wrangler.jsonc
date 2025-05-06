@@ -1,6 +1,10 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "virgin-money",
+	"name": "banking-simulation",
 	"main": "./src/worker/worker.ts",
 	"compatibility_date": "2025-03-01",
 	"compatibility_flags": [
@@ -20,8 +24,8 @@
 		]
 	},
 	"vars": { 
-		"API_BASE_URL": "https://www.example.com",
-		"COMPANY_NAME": "Your Company",
-		"COLOR_PRIMARY": "#e10718"
+		"API_BASE_URL": "https://virgin.sub.justalittlebyte.ovh",
+		"COMPANY_NAME": "Cloudflare Banking",
+		"COLOR_PRIMARY": "#f48120"
 	}
 }
