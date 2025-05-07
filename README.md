@@ -57,13 +57,10 @@ The application exposes the following API endpoints:
 - `/api/openapi` - OpenAPI specification
 - `/api/api-docs` - Additional API documentation
 
-### Note
 
-```
-The endpoint /api/user-profile is answering to requests without an api-key, which is useful when demonstration our API shield capabilities around surfacing mixed auth events
+ℹ️ **Info:** The endpoint /api/user-profile is answering to requests without an api-key, which is useful when demonstration our API shield capabilities around surfacing mixed auth events
 
 
-```
 
 ## Pages
 
