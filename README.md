@@ -23,32 +23,17 @@ This project showcases modern banking APIs through a demo application that provi
 - **Documentation**: OpenAPI/Swagger integration
 
 ```mermaid
-graph TD
-    Client(Client Browser) --- Frontend
+graph TB
+    Client(Client Browser)
+    Frontend[Next.js Frontend]
     
-    subgraph "Cloudflare Workers"
-        Frontend[Next.js Frontend]
-        Worker[Worker.ts]
-        
-        subgraph "Next.js API Routes"
-            Login["/api/login"]
-            Accounts["/api/accounts"]
-            Transactions["/api/transactions"]
-            UserProfile["/api/user-profile"]
-            PaymentMethods["/api/payment-methods"]
-            Contact["/api/contact"]
-            Swagger["/api/swagger"]
-            OpenAPI["/api/openapi"]
-            APIDoc["/api/api-docs"]
-        end
-    end
+    Client --- Frontend
     
-    Frontend -->|Renders| Pages
-    Frontend -->|Fetches| NextAPI
-    
-    Worker -->|Scheduled Tasks| APITesting
+    Frontend --> Pages
+    Frontend --> NextAPI
     
     subgraph "Pages"
+        direction TB
         HomePage["/"]
         LoginPage["/login"]
         ContactPage["/contact"]
@@ -56,20 +41,35 @@ graph TD
         APIDocsPage["/api-docs"]
     end
     
+    subgraph "Next.js API Routes"
+        direction TB
+        Login["/api/login"]
+        Accounts["/api/accounts"]
+        Transactions["/api/transactions"]
+        UserProfile["/api/user-profile"]
+        PaymentMethods["/api/payment-methods"]
+        Contact["/api/contact"]
+        Swagger["/api/swagger"]
+        OpenAPI["/api/openapi"]
+        APIDoc["/api/api-docs"]
+    end
+    
+    Worker[Worker.ts]
+    Worker --> APITesting
+    
     subgraph "API Testing"
+        direction TB
         APITesting[Test API with Entropy]
         TestProfile[Test User Profile]
     end
     
-    LoginPage -->|Authentication| Login
-    ContactPage -->|Form Submission| Contact
+    LoginPage --> Login
+    ContactPage --> Contact
     
-    subgraph "External Services"
-        Turnstile[Cloudflare Turnstile]
-    end
+    Turnstile[Cloudflare Turnstile]
     
-    Login -->|Validates| Turnstile
-    Contact -->|Validates| Turnstile
+    Login --> Turnstile
+    Contact --> Turnstile
     
     classDef page fill:#f9f,stroke:#333,stroke-width:1px;
     classDef api fill:#bbf,stroke:#333,stroke-width:1px;
