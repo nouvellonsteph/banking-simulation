@@ -27,7 +27,6 @@
 		"API_BASE_URL": "https://virgin.sub.justalittlebyte.ovh",
 		"COMPANY_NAME": "Cloudflare Banking",
 		"COLOR_PRIMARY": "#f48120",
-		"TURNSTILE_SITE_KEY": "0x4AAAAAABXgDOr9knna9nPt",
-		"TURNSTILE_SECRET_KEY": "0x4AAAAAABXgDCSPusRc3MG29sYHQESlAro"
+		"TURNSTILE_SITE_KEY": "0x4AAAAAABXgDOr9knna9nPt"
 	}
 }
