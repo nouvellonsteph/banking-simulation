@@ -22,6 +22,66 @@ This project showcases modern banking APIs through a demo application that provi
 - **Deployment**: Cloudflare Workers (via Open Next)
 - **Documentation**: OpenAPI/Swagger integration
 
+```mermaid
+graph TD
+    Client(Client Browser) --- Frontend
+    
+    subgraph "Cloudflare Workers"
+        Frontend[Next.js Frontend]
+        Worker[Worker.ts]
+        
+        subgraph "Next.js API Routes"
+            Login["/api/login"]
+            Accounts["/api/accounts"]
+            Transactions["/api/transactions"]
+            UserProfile["/api/user-profile"]
+            PaymentMethods["/api/payment-methods"]
+            Contact["/api/contact"]
+            Swagger["/api/swagger"]
+            OpenAPI["/api/openapi"]
+            APIDoc["/api/api-docs"]
+        end
+    end
+    
+    Frontend -->|Renders| Pages
+    Frontend -->|Fetches| NextAPI
+    
+    Worker -->|Scheduled Tasks| APITesting
+    
+    subgraph "Pages"
+        HomePage["/"]
+        LoginPage["/login"]
+        ContactPage["/contact"]
+        APIDemo["/api-demo"]
+        APIDocsPage["/api-docs"]
+    end
+    
+    subgraph "API Testing"
+        APITesting[Test API with Entropy]
+        TestProfile[Test User Profile]
+    end
+    
+    LoginPage -->|Authentication| Login
+    ContactPage -->|Form Submission| Contact
+    
+    subgraph "External Services"
+        Turnstile[Cloudflare Turnstile]
+    end
+    
+    Login -->|Validates| Turnstile
+    Contact -->|Validates| Turnstile
+    
+    classDef page fill:#f9f,stroke:#333,stroke-width:1px;
+    classDef api fill:#bbf,stroke:#333,stroke-width:1px;
+    classDef service fill:#bfb,stroke:#333,stroke-width:1px;
+    classDef worker fill:#fbb,stroke:#333,stroke-width:1px;
+    
+    class HomePage,LoginPage,ContactPage,APIDemo,APIDocsPage page;
+    class Login,Accounts,Transactions,UserProfile,PaymentMethods,Contact,Swagger,OpenAPI,APIDoc api;
+    class Turnstile service;
+    class Worker,APITesting,TestProfile worker;
+```
+
 ## Features
 
 ### Authentication
