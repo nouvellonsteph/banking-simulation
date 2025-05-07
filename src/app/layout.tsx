@@ -21,8 +21,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: `${process.env.COMPANY_NAME || "Virgin Money"} - Banking Services`,
-  description: `${process.env.COMPANY_NAME || "Virgin Money"} banking services and products`,
+  title: `${process.env.COMPANY_NAME || "Cloudflare Banking"} - Banking Services`,
+  description: `${process.env.COMPANY_NAME || "Cloudlfare Banking"} banking services and products`,
 };
 
 function Header() {
@@ -32,7 +32,7 @@ function Header() {
         <div className="flex items-center">
           <Link href="/">
             <div className="py-4 px-2">
-              <div className="text-[var(--primary)] font-bold text-2xl tracking-tight">{process.env.COMPANY_NAME || "Virgin Money"}</div>
+              <div className="text-[var(--primary)] font-bold text-2xl tracking-tight">{process.env.COMPANY_NAME || "Cloudflare Banking"}</div>
             </div>
           </Link>
         </div>

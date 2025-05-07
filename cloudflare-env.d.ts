@@ -6,5 +6,4 @@ interface CloudflareEnv {
   COMPANY_NAME?: string;
   COLOR_PRIMARY?: string;
   TURNSTILE_SITE_KEY?: string;
-  TURNSTILE_SECRET_KEY?: string;
 }

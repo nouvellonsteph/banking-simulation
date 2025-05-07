@@ -12,6 +12,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [turnstileEnabled, setTurnstileEnabled] = useState(false);
   const [token, setToken] = useState<string | null>(null);
+  const turnstileSiteKey = process.env.TURNSTILE_SITE_KEY;
 
   // Check for turnstile parameter in URL on component mount
   useEffect(() => {
@@ -141,7 +142,7 @@ export default function Login() {
             {turnstileEnabled && (
               <div className="mb-6 flex justify-center">
                 <Turnstile
-                  sitekey={process.env.TURNSTILE_SITE_KEY || "" }
+                  sitekey={turnstileSiteKey || "0x4AAAAAABXgDOr9knna9nPt"}
                   onVerify={(token: string) => setToken(token)}
                   theme="light"
                 />
