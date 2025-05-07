@@ -2,9 +2,13 @@
 import { default as handler } from "../../.open-next/worker.js";
 //import { DurableObject } from 'cloudflare:workers';
 
-// Define CloudflareEnv interface to include the API_BASE_URL
+// Define CloudflareEnv interface to include environment variables
 interface CloudflareEnv {
   API_BASE_URL?: string;
+  COMPANY_NAME?: string;
+  COLOR_PRIMARY?: string;
+  TURNSTILE_SITE_KEY?: string;
+  TURNSTILE_SECRET_KEY?: string;
   [key: string]: unknown;
 }
 

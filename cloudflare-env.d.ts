@@ -2,4 +2,9 @@
 // by running `wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts`
 
 interface CloudflareEnv {
+  API_BASE_URL?: string;
+  COMPANY_NAME?: string;
+  COLOR_PRIMARY?: string;
+  TURNSTILE_SITE_KEY?: string;
+  TURNSTILE_SECRET_KEY?: string;
 }

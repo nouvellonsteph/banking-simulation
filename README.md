@@ -25,13 +25,17 @@ This project showcases modern banking APIs through a demo application that provi
 ## Features
 
 ### Authentication
-The application includes a secure login system with proper authentication utilities.
+The application includes a secure login system with proper authentication utilities. Cloudflare tunstile is also demonstrated when the query string `?turnstile=true` is added to the URL.
 
 ### Banking Features
 - **Accounts**: View available accounts and details
 - **Transactions**: Access transaction history 
 - **Payment Methods**: Manage payment options
 - **User Profile**: View and manage user information
+
+### Contact
+
+The application includes a contact form for user inquiries. Cloudflare turnstile is also demonstrated when the query string `?turnstile=true` is added to the URL.
 
 ### API Documentation
 Interactive API documentation is available through:
@@ -124,13 +128,18 @@ The following environment variables can be configured in the `vars` section of `
 "vars": { 
   "API_BASE_URL": "https://your-api-endpoint.com",
   "COMPANY_NAME": "Your Bank Name",
-  "COLOR_PRIMARY": "#YourBrandColor"
+  "COLOR_PRIMARY": "#YourBrandColor",
+  "TURNSTILE_SITE_KEY": "YourTurnstileSiteKey",
+  "TURNSTILE_SECRET_KEY": "YourTurnstileSecretKey"
+
 },
 ```
 
 - **API_BASE_URL**: The base URL for your banking API. This should point to your backend API service that provides the banking data.
 - **COMPANY_NAME**: The name of your banking organization. This will be displayed throughout the application UI.
 - **COLOR_PRIMARY**: The primary brand color in hexadecimal format. This will be used for styling elements throughout the application.
+- **TURNSTILE_SITE_KEY**: Your Cloudflare Turnstile site key for CAPTCHA functionality.
+- **TURNSTILE_SECRET_KEY**: Your Cloudflare Turnstile secret key for CAPTCHA functionality.
 
 ### Cron Trigger Functionality
 
@@ -144,6 +153,11 @@ The banking website includes a scheduled worker that runs via the cron trigger c
 
 The cron trigger frequency can be adjusted in the `wrangler.jsonc` file. By default, it's set to run every minute (`"* * * * *"`), but you can modify this to run less frequently in production environment
 
+### Caveat
+```
+The cron job will effectively send requests to the API endpoints, but these won't be seen in the API shield product and some of analytics pages since the the request source field `requestSource` is set to `EdgeWorkerFetch`. This is in general useful done to avoid counting twice the request triggering a worker from a client. In that case this is purely generated via Cron and not from a client. 
+```
+
 ## API Documentation
 
 The API documentation is available at:
@@ -154,7 +168,3 @@ The API documentation is available at:
 ## Contributing
 
 Please follow the project's coding standards and submit pull requests for any proposed changes.
-
-## License
-
-[Specify the license information here]

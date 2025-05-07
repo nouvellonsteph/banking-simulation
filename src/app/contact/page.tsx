@@ -196,7 +196,7 @@ export default function Contact() {
             {turnstileEnabled && (
               <div className="mb-6 flex justify-center">
                 <Turnstile
-                  sitekey="0x4AAAAAABXgDOr9knna9nPt"
+                  sitekey={process.env.TURNSTILE_SITE_KEY || ""}
                   onVerify={(token) => setToken(token)}
                   theme="light"
                 />

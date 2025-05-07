@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { validateCredentials } from '../auth-utils';
 
-const TURNSTILE_SECRET_KEY = '0x4AAAAAABXgDCSPusRc3MG29sYHQESlAro';
+const TURNSTILE_SECRET_KEY = process.env.TURNSTILE_SECRET_KEY || '';
 const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 
 interface TurnstileVerifyResponse {
