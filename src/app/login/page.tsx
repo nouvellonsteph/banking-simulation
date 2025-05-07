@@ -1,5 +1,5 @@
-"use client";
 
+"use client";
 import { useState, useEffect } from "react";
 import type { User } from "../api/login/route";
 import Link from "next/link";
@@ -141,7 +141,7 @@ export default function Login() {
             {turnstileEnabled && (
               <div className="mb-6 flex justify-center">
                 <Turnstile
-                  sitekey={process.env.TURNSTILE_SITE_KEY || ""}
+                  sitekey={process.env.TURNSTILE_SITE_KEY || "" }
                   onVerify={(token: string) => setToken(token)}
                   theme="light"
                 />
