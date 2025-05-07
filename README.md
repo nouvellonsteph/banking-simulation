@@ -4,6 +4,7 @@ A Next.js application that demonstrates banking API capabilities, deployed on Cl
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fnouvellonsteph%2Fbanking-simulation)
 
+
 ## Overview
 
 This project showcases modern banking APIs through a demo application that provides:
@@ -55,6 +56,14 @@ The application exposes the following API endpoints:
 - `/api/swagger` - Swagger UI for API documentation
 - `/api/openapi` - OpenAPI specification
 - `/api/api-docs` - Additional API documentation
+
+### Note
+
+```
+The endpoint /api/user-profile is answering to requests without an api-key, which is useful when demonstration our API shield capabilities around surfacing mixed auth events
+
+
+```
 
 ## Pages
 
