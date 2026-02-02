@@ -57,8 +57,8 @@ function Footer() {
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-bold mb-4">{process.env.COMPANY_NAME || "Virgin Money"}</h3>
-            <p className="text-sm mb-4">© {process.env.COMPANY_NAME || "Virgin Money"} {new Date().getFullYear()}</p>
+            <h3 className="text-lg font-bold mb-4">{process.env.COMPANY_NAME || "Cloudflare Banking"}</h3>
+            <p className="text-sm mb-4">© {process.env.COMPANY_NAME || "Cloudflare Banking"} {new Date().getFullYear()}</p>
             <p className="text-sm">This is a demo application for security testing purposes only.</p>
           </div>
           <div>

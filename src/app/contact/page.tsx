@@ -100,7 +100,7 @@ export default function Contact() {
           <div className="vm-card">
             <div className="text-center">
               <h1 className="text-2xl font-bold mb-4 text-[var(--primary)]">Message Sent!</h1>
-              <p className="mb-6">Thank you for contacting Virgin Money. We&#39;ll get back to you as soon as possible.</p>
+              <p className="mb-6">Thank you for contacting us. We&#39;ll get back to you as soon as possible.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button onClick={handleReset} className="vm-button">
                   Send Another Message
@@ -220,14 +220,14 @@ export default function Contact() {
                 <strong>Phone:</strong> 0800 123 4567
               </p>
               <p>
-                <strong>Email:</strong> support@virginmoney.example
+                <strong>Email:</strong> support@example.com
               </p>
               <p>
                 <strong>Address:</strong><br />
-                Virgin Money<br />
-                Jubilee House<br />
-                Gosforth, Newcastle upon Tyne<br />
-                NE3 4PL
+                Cloudflare Banking<br />
+                101 Townsend Street<br />
+                San Francisco, CA<br />
+                94107
               </p>
             </div>
           </div>

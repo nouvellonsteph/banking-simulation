@@ -6,7 +6,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="bg-[var(--primary)] text-white rounded-lg p-8 md:p-12 mb-12">
         <div className="max-w-3xl">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">Welcome to {process.env.COMPANY_NAME || "Virgin Money"}</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">Welcome to {process.env.COMPANY_NAME || "Cloudflare Banking"}</h1>
           <p className="text-lg mb-6">Banking that makes a difference. Simple, transparent, and designed for you.</p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/login" className="vm-button">

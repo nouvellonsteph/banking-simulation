@@ -22,7 +22,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Virgin Money uses a light-themed design regardless of user preference */
+/* Uses a light-themed design regardless of user preference */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #ffffff;

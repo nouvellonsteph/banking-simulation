@@ -1,17 +1,17 @@
 openapi: 3.1.0
 info:
-  title: Virgin Money API
+  title: Banking API
   description: |
-    Virgin Money Banking API provides secure access to financial data and operations.
+    Banking API provides secure access to financial data and operations.
     
     **Security Note:** All endpoints except `/api/user-profile` (GET) require an API key for authentication.
   version: 1.0.0
   contact:
-    name: Virgin Money API Support
-    email: api-support@virginmoney.example
+    name: Banking API Support
+    email: api-support@example.com
 servers:
   - url: /api
-    description: Virgin Money API Server
+    description: Banking API Server
 components:
   securitySchemes:
     ApiKeyAuth:

@@ -93,7 +93,7 @@ export default function ApiDemo() {
         <div className="vm-card mb-8">
           <h1 className="text-2xl font-bold mb-6 text-[var(--primary)]">API Demonstration</h1>
           <p className="mb-4">
-            This demo showcases the Virgin Money API endpoints with various HTTP methods. 
+            This demo showcases the Banking API endpoints with various HTTP methods. 
             Select an endpoint, choose a method, and send a request to see the response.
           </p>
           
