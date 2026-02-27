@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server';
+import { induceLatency } from '../auth-utils';
 
 // Inline the OpenAPI specification directly to avoid file system access issues
 export async function GET() {
+  await induceLatency();
   // Get API base URL from environment variables (set in wrangler.jsonc)
   const apiBaseUrl = process.env.API_BASE_URL || '/api';
   const companyName = process.env.COMPANY_NAME || "Cloudflare Banking";

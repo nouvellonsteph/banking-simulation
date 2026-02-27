@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
+import { induceLatency } from '../auth-utils';
 
 export async function GET() {
+  await induceLatency();
   // Create an HTML page that embeds Swagger UI
   const html = `
 <!DOCTYPE html>

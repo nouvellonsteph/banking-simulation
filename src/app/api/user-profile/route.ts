@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { validateApiKey } from '../auth-utils';
+import { validateApiKey, induceLatency } from '../auth-utils';
 
 // Mock user profile data
 const userProfile = {
@@ -15,6 +15,7 @@ const userProfile = {
 };
 
 export async function GET() {
+  await induceLatency();
   // SECURITY VULNERABILITY: No API key required for GET request on user profile
   // This is intentional for the security demo
   
@@ -22,6 +23,7 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
+  await induceLatency();
   // Validate API key for all other methods
   const authError = validateApiKey(request);
   if (authError) return authError;
@@ -30,6 +32,7 @@ export async function POST(request: NextRequest) {
 }
 
 export async function PUT(request: NextRequest) {
+  await induceLatency();
   // Validate API key
   const authError = validateApiKey(request);
   if (authError) return authError;
@@ -50,6 +53,7 @@ export async function PUT(request: NextRequest) {
 }
 
 export async function PATCH(request: NextRequest) {
+  await induceLatency();
   // Validate API key
   const authError = validateApiKey(request);
   if (authError) return authError;
@@ -70,6 +74,7 @@ export async function PATCH(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
+  await induceLatency();
   // Validate API key
   const authError = validateApiKey(request);
   if (authError) return authError;

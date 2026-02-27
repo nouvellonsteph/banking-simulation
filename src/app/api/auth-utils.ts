@@ -94,3 +94,16 @@ export function validateCredentials(username: string, password: string) {
     user => user.username === username && user.password === password
   );
 }
+
+// External fetch to induce latency for Cloudflare graphs visibility
+// This fetches a small resource to add measurable latency to API responses
+export async function induceLatency(): Promise<void> {
+  try {
+    await fetch('https://cloudflare.com/cdn-cgi/trace', {
+      method: 'GET',
+      cache: 'no-store',
+    });
+  } catch {
+    // Silently ignore errors - latency induction is non-critical
+  }
+}

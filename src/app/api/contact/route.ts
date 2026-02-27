@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { induceLatency } from '../auth-utils';
 
 const TURNSTILE_SECRET_KEY = process.env.TURNSTILE_SECRET_KEY || '';
 const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
@@ -20,6 +21,7 @@ interface ContactFormData {
 }
 
 export async function POST(request: Request) {
+  await induceLatency();
   try {
     const data = await request.json() as ContactFormData;
     const { name, email, message, token } = data;

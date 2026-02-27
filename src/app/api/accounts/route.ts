@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { validateApiKey } from '../auth-utils';
+import { validateApiKey, induceLatency } from '../auth-utils';
 
 // Mock data for accounts
 const accounts = [
@@ -9,6 +9,7 @@ const accounts = [
 ];
 
 export async function GET(request: NextRequest) {
+  await induceLatency();
   // Validate API key for all endpoints except user-profile
   const authError = validateApiKey(request);
   if (authError) return authError;
@@ -17,6 +18,7 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  await induceLatency();
   // Validate API key
   const authError = validateApiKey(request);
   if (authError) return authError;
@@ -45,6 +47,7 @@ export async function POST(request: NextRequest) {
 }
 
 export async function PUT(request: NextRequest) {
+  await induceLatency();
   // Validate API key
   const authError = validateApiKey(request);
   if (authError) return authError;
@@ -54,6 +57,7 @@ export async function PUT(request: NextRequest) {
 }
 
 export async function PATCH(request: NextRequest) {
+  await induceLatency();
   // Validate API key
   const authError = validateApiKey(request);
   if (authError) return authError;
@@ -63,6 +67,7 @@ export async function PATCH(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
+  await induceLatency();
   // Validate API key
   const authError = validateApiKey(request);
   if (authError) return authError;

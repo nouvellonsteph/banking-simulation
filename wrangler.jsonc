@@ -24,7 +24,7 @@
 		]
 	},
 	"vars": { 
-		"API_BASE_URL": "https://banking.sub.justalittlebyte.ovh",
+		"API_BASE_URL": "https://banking.sub.justalittlebyte.ovh/api",
 		"COMPANY_NAME": "Cloudflare Banking",
 		"COLOR_PRIMARY": "#1D6DFF",
 		"TURNSTILE_SITE_KEY": "0x4AAAAAABXgDOr9knna9nPt"

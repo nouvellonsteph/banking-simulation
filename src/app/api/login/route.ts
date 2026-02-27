@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { validateCredentials } from '../auth-utils';
+import { validateCredentials, induceLatency } from '../auth-utils';
 
 const TURNSTILE_SECRET_KEY = process.env.TURNSTILE_SECRET_KEY || '';
 const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
@@ -25,6 +25,7 @@ export interface LoginRequest {
 }
 
 export async function POST(request: Request) {
+  await induceLatency();
   try {
     const data = await request.json() as LoginRequest;
     const { username, password, token, turnstileEnabled } = data;
